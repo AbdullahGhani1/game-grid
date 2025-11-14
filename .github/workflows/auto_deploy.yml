@@ -1,0 +1,23 @@
+
+name: game-grid
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: actions/checkout@v6
+
+    - name: Installing Node
+      uses:  actions/setup-node@v6
+      with:
+        node-version: 24.11
+    - name: Installing surge
+      run: npm install -- global surge
+
+    - name: deploying using surge
+      run: surge ./dist game-grid.surge.sh --token $ {{ secrets.SURGE_TOKEN }}
+        
+  
