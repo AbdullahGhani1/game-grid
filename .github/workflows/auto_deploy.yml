@@ -27,4 +27,4 @@ jobs:
            run: bun add --global surge
 
          - name: Deploy to Surge
-           run: surge ./dist game-grid.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+           run: surge ./dist game-libs.surge.sh --token ${{ secrets.SURGE_TOKEN }}
