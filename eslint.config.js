@@ -21,7 +21,7 @@ const compat = new FlatCompat({
 
 const config = [
    {
-      ignores: ['dist', 'node_modules'],
+      ignores: ['dist', 'node_modules', 'src/components/ui/*'],
    },
    js.configs.recommended,
    ...tseslint.configs.recommended,
